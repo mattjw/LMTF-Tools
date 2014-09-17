@@ -1,0 +1,126 @@
+*Vertices      79
+     1 "Abdul Malik"    0.6931    0.7935
+     2 "Abdul Rauf"    0.6904    0.6941
+     3 "Abdul Rohim"    0.7354    0.7545
+     4 "Abdullah Sunata"    0.7111    0.5959
+     5 "Abdullah Sungkar"    0.8120    0.3479
+     6 "Abu Bakar Ba'asyir"    0.7249    0.4589
+     7 "Abu Dujanah"    0.1527    0.5804
+     8 "Abu Fida"    0.6435    0.1906
+     9 "Aceng Kurnia"    0.4221    0.8435
+     10 "Achmad Hasan"    0.4330    0.4658
+     11 "Adung"    0.7428    0.2553
+     12 "Agus Ahmad"    0.3468    0.3288
+     13 "Ahmad Rofiq Ridho"    0.1918    0.6811
+     14 "Ahmad Sayid Maulana"    0.6945    0.2141
+     15 "Ajengan Masduki"    0.4233    0.7755
+     16 "Akram"    0.7752    0.7158
+     17 "Ali Ghufron"    0.2326    0.7283
+     18 "Anif Solchanudin"    0.8123    0.6626
+     19 "Apuy"    0.3166    0.8031
+     20 "Aris Munandar"    0.7840    0.4058
+     21 "Asep Jaja"    0.4180    0.2110
+     22 "Asmar Latin Sani"    0.7579    0.6505
+     23 "Azhari Husin"    0.5670    0.5610
+     24 "Baharudin Soleh"    0.2705    0.7652
+     25 "Chandra"    0.4332    0.4685
+     26 "Cholily"    0.8500    0.4716
+     27 "Dani Chandra"    0.6361    0.8207
+     28 "Dulmatin"    0.8382    0.4133
+     29 "Enceng Kurnia"    0.3692    0.8233
+     30 "Engkos Kosasih"    0.8261    0.6055
+     31 "Fathurrahman al-Ghozi"    0.5849    0.8378
+     32 "Fathurrochman"    0.7797    0.2994
+     33 "Hambali"    0.5388    0.7856
+     34 "Hari Kuncoro"    0.7560    0.5365
+     35 "Harun"    0.3376    0.7426
+     36 "Hence Malewa"    0.8453    0.5560
+     37 "Heri Golun"    0.7296    0.3465
+     38 "Heri Sigu Samboja"    0.5789    0.7182
+     39 "Imam Bukhori"    0.4752    0.8416
+     40 "Imam Samudra"    0.6428    0.7531
+     41 "Iqbal "    0.6267    0.3391
+     42 "Iqbal Huseini"    0.4070    0.6755
+     43 "Irun Hidayat"    0.8167    0.5076
+     44 "Ismail"    0.5682    0.5613
+     45 "Iwan Dharmawan"    0.4811    0.7188
+     46 "Jabir"    0.6799    0.2761
+     47 "Joko Triharmanto"    0.3306    0.6569
+     48 "Joni Achmad Fauzan"    0.5919    0.1718
+     49 "Marwan"    0.5269    0.8500
+     50 "Misno"    0.2585    0.4300
+     51 "Mohamed Ihsan"    0.5341    0.1518
+     52 "Mohamed Rais"    0.5683    0.5621
+     53 "Mohamed Saifuddin (alias Faiz)"    0.2231    0.4896
+     54 "Muchtar"    0.1791    0.6282
+     55 "Munfiatun"    0.4569    0.1500
+     56 "Mus'ab Sahidi"    0.2531    0.6652
+     57 "Muzayin Abdul Wahab"    0.5167    0.1984
+     58 "Nasir Abas"    0.1500    0.5233
+     59 "Noordin Mohammed Top"    0.5696    0.5610
+     60 "Purnama Putra"    0.4201    0.2149
+     61 "Qotadah"    0.1958    0.3856
+     62 "Rosihin Noor"    0.3443    0.3308
+     63 "Said Sungkar"    0.5959    0.2412
+     64 "Salik Firdaus"    0.6598    0.4103
+     65 "Salman"    0.1512    0.4679
+     66 "Saptono"    0.2400    0.2685
+     67 "Sardona Siliwangi"    0.4819    0.2702
+     68 "Son Hadi"    0.4349    0.4702
+     69 "Subur Sugiarto"    0.3455    0.1786
+     70 "Suramto"    0.4343    0.4709
+     71 "Tohir"    0.2211    0.5615
+     72 "Toni Togar"    0.1895    0.3250
+     73 "Ubeid"    0.5461    0.3162
+     74 "Umar"    0.1560    0.4116
+     75 "Umar Patek"    0.3287    0.2293
+     76 "Umar Wayan "    0.2777    0.2315
+     77 "Urwah"    0.2935    0.5784
+     78 "Usman bin Sef"    0.4362    0.4692
+     79 "Zulkarnaen"    0.2439    0.3272
+*Arcs
+      1      1    1.0000
+     10     10    2.0000
+     10     68    2.0000
+     10     70    1.0000
+     10     78    1.0000
+     12     12    1.0000
+     12     62    1.0000
+     21     21    1.0000
+     21     60    1.0000
+     23     23    1.0000
+     23     44    1.0000
+     23     52    1.0000
+     23     59    1.0000
+     25     25    1.0000
+     25     68    1.0000
+     43     43    1.0000
+     44     23    1.0000
+     44     44    1.0000
+     44     52    1.0000
+     44     59    1.0000
+     52     23    1.0000
+     52     44    1.0000
+     52     52    1.0000
+     52     59    1.0000
+     59     23    1.0000
+     59     44    1.0000
+     59     52    1.0000
+     59     59    1.0000
+     60     21    1.0000
+     60     60    2.0000
+     62     12    1.0000
+     62     62    1.0000
+     68     10    2.0000
+     68     25    1.0000
+     68     68    3.0000
+     68     70    1.0000
+     68     78    1.0000
+     70     10    1.0000
+     70     68    1.0000
+     70     70    1.0000
+     70     78    1.0000
+     78     10    1.0000
+     78     68    1.0000
+     78     70    1.0000
+     78     78    1.0000
