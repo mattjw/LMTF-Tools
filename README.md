@@ -27,10 +27,10 @@ The following publicly available original network data files are available in th
 
 * `flights`: Flights routes around the world. Originally available at [openflight](http://openflight.org).
 * `noordin_top`: the Noordin Top dataset used in Sean F. Everton's book "Disrupting Dark Networks", originally available  [on this website](https://sites.google.com/site/sfeverton18/research/appendix-1). The original Pajek (.paj) file has been split into the four text files that can be found in the `noordin_top` directory:
-* * `Trust.txt` -- Trust Network
-* * `Operational.txt` -- Operational Network
-* * `Business_Financial.txt` -- Business and Financial Network
-* * `Communication.txt` -- Communication Network
+  * `Trust.txt` -- Trust Network
+  * `Operational.txt` -- Operational Network
+  * `Business_Financial.txt` -- Business and Financial Network
+  * `Communication.txt` -- Communication Network
 
 
 ## General Usage Notes
