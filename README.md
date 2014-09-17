@@ -1,35 +1,38 @@
-Drawing and creating multiplex format and analyse of multiplex network datas   23/08/2013
-============================
+# Multiplex format translation and visualisation
+
+This repository contains open-source software tools for converting multiplex network data 
+files into the LASAGNE Multiplex Framework foramt.
 
 
-FILES
--------------------
-connector_flight (python file)
-connector_terrorist (python file)
+## Files
 
-multiplex_db (python file)
-multiplex_file (python file)
+The following Python files can be found in the `src` directory:
 
-multiplex_db_draw (python file)
-multiplex_file_draw (python file)
+* connector_flight
+* connector_terrorist
 
-centrality_db (python file)
-centrality_file (python file)
+* multiplex_db
+* multiplex_file
 
-disrupt_db (python file)
-disrupt_file (python file)
+* multiplex_db_draw
+* multiplex_file_draw
 
+* centrality_db
+* centrality_file
 
-Terrorist data set:
-Trust Network (text file)
-Operational Network (text file)
-Business and Financial Network (text file)
-Communication Network (text file)
+* disrupt_db
+* disrupt_file
 
+The following publicly available original network data files are available in the `public_source_datasets` directory:
 
-Flight data set:
-flight (text file)
-
+* flights: Flights routes around the world. Originally available at from [http://openflight.org].
+* noordin_top: the Noordin Top dataset used in Sean F. Everton's book "Disrupting Dark Networks", originally available at
+  [https://sites.google.com/site/sfeverton18/research/appendix-1]. The original Pajek (.paj) file has been split into the four text
+    files that can be found in this directory:
+* * `Trust.txt` -- Trust Network
+* * `Operational.txt` -- Operational Network
+* * `Business_Financial.txt` -- Business and Financial Network
+* * `Communication.txt` -- Communication Network
 
 GENERAL USAGE NOTES
 ---------------------------
@@ -109,7 +112,7 @@ HOW TO INSTALL MYSQL SERVER
 5- If you want, create another user
 
 
-L›BRAR›ES TO ˝NSTALL
+L√ùBRAR√ùES TO √ΩNSTALL
 --------------------------
 
 1- networkx
