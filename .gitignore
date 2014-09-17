@@ -2,6 +2,7 @@
 *.py~
 *.*~
 data
+doc
 
 #### Packages ####
 
