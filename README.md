@@ -151,7 +151,7 @@ There are two output possibilities:
     * generate\_multiplex\_brain_text is a script which creates multiplex format for the brain input dataset and outputs to a text file.
     Command line arguments for generate\_multiplex\_brain\_text: name of the network
 
-    The output goes to the file `(network_name)_multiplex.txt, in the same directory as the script.
+The output goes to the file `(network_name)_multiplex.txt`, in the same directory as the script.
 
 2. SQL output:
 
@@ -161,12 +161,12 @@ There are two output possibilities:
     * generate\_multiplex\_brain\_db is a script which creates multiplex format for the brain input dataset and outputs to a SQL database.
     Command line arguments for generate\_multiplex\_brain\_db: MySQL username, MySQL password, name of the network
 
-    The output goes to `(network_name)_db.db`.
+The output goes to `(network_name)_db.db`.
 
 Running the specific Original Data Connectors previously will create the appropriate files in the directory in order for the drawing tools to be able to run.
 
 
-### Drawing Tools - Generate a simple visualisation of the network(Using raw and LMTF data)
+### Drawing Tools - Generate a simple visualisation of the network
 
 * `draw_multiplex_text` is a script which draws a multiplex network by getting data from files.
 Command line arguments for draw_multiplex_text : name of the network
