@@ -1,5 +1,5 @@
 """ 
-Creating meta format of a the Pardos network and writing them into text files
+Creating meta format of a the Pardus network and writing them into text files
 """
 # Demet Turan <dxt261@cs.bham.ac.uk>
 
