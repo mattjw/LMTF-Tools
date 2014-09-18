@@ -3,6 +3,8 @@
 *.*~
 data
 doc
+argparse.py
+networkx
 
 #### Packages ####
 

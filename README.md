@@ -8,20 +8,24 @@ files into the LASAGNE Multiplex Framework foramt.
 
 The following Python files can be found in the `src` directory:
 
+* connector_db_inter
+* connector_db_inter_list
+* connector_db_intra
+* connector_db_intra_list
+* connector_db_node_layer
 * connector_flight
 * connector_terrorist
+* connector_brain
+* connector_pardus
+* generate\_multiplex\_text
+* generate\_multiplex\_db
+* generate\_multiplex\_brain_text
+* generate\_multiplex\_brain_db
+* draw\_multiplex_db
+* draw\_multiplex_file
 
-* multiplex_db
-* multiplex_file
 
-* multiplex_db_draw
-* multiplex_file_draw
 
-* centrality_db
-* centrality_file
-
-* disrupt_db
-* disrupt_file
 
 The following publicly available original network data files are available in the `public_source_datasets` directory:
 
@@ -38,7 +42,7 @@ Connectors are provided for 3 data formats. In all formats, inputs are raw text 
 
 ### 1. Flight Dataset Format
 
-This dataset is comprised of information about flights around the world. The original dataset can be downloaded [here](http://openflights.org/data.html)
+This dataset is comprised of information about flights around the world. The original dataset can be downloaded [here](http://openflights.org/data.html).
 
 
 Each of the files contains the following fields, separated by commas:
@@ -55,9 +59,9 @@ Each of the files contains the following fields, separated by commas:
 
 ### 2. Noordin Top's Terrorist Network Dataset Format
 
-This dataset is comprised of links of different types in a terrorist network. The original dataset can be obtained [here](https://sites.google.com/site/sfeverton18/research/appendix-1)
+This dataset is comprised of links of different types in a terrorist network. The original dataset can be obtained [here](https://sites.google.com/site/sfeverton18/research/appendix-1).
 
-The format of the data is the Pajek format, on which information can be obtained [here](http://pajek.imfm.si/doku.php)
+The format of the data is the Pajek format, on which information can be obtained [here](http://pajek.imfm.si/doku.php).
 
 ### 3. Pardus Dataset Format
 
@@ -86,49 +90,105 @@ Each of the files contains the following fields, separated by commas:
 
 ## General Usage Notes
 
-Please note that to execute any Python scripts which includes a MySQL DB generation the user needs MySQL server on the computer and a MySQL account and a password. (See "Requirements" below for more information.)
+Please note that, generally, being able to run a script depends on having run the previous ones in the logical order of the processing of the data.
+The steps are:
+    
+    * If raw data is in SQL format, run specific database connectors to convert files to text format. If raw data is in text format, skip this step.
+    * Run specific Original Data Connectors to convert raw data to meta format - input raw data can be either text or SQL
+    * Run specific Multiplex Generation Tools to convert meta format data to LMTF multiplex format
+    * Run Visualisation tools
 
-1. `connector_flight` converts raw data of flight data set into meta format.
-*Command line arguments for connector_flight : name of the network and flight file (ex: python connector_flight flight.txt).*
+Also note that to execute any Python scripts which includes a MySQL DB generation the user needs MySQL server on the computer and a MySQL account and a password. (See "Requirements" below for more information.)
 
-2. `connector_terrorist` converts raw data of the Noordin Top terrorist data set into meta format.
-*Command line arguments for connector_terrorist : name of the network and terrorist files (ex: python connector_terrorist a.txt b.txt ...).*
 
-3. `connector_pardus` converts raw data of the Pardus data into meta format.
-*Command line arguments for connector_pardus : name of the network and pardus files (ex: python connector_pardus a.txt b.txt ...).*
 
-3. `multiplex_db` is a script which creates multiplex format of data sets and stores them in the database
-There are 5 or more tables : multiplex table, nodelist table, layerlist table, inter-layer list table
-and intra-layer list tables(depends on the number of layers). 
-*Command line arguments for multiplex_db : username, password, name of the network.*
+### Database Connectors - Convert SQL raw data to text raw data (optional)
 
-4. `multiplex_file` is a script which creates multiplex format of data sets and stores them in a file.
-*Command line arguments for multiplex_file : name of the network.*
+* `connector_db_inter` - converts inter-layer edge data in a SQL file to a text file
+* `connector_db_inter_list` - same as above, but outputs a list of edges instead of having them separated by endline characters
+* `connector_db_intra` - converts intra-layer edge data in a SQL file to a text file
+* `connector_db_intra_list` - outputs a list of edges instead of having them separated by endline characters
+* `connector_db_node_layer`- converts node and layer list data in a SQL file to a text file
 
-5. `multiplex_db_draw` is a script which draws multiplex network by getting data sets from the database.
-*Command line arguments for multiplex_db_draw : username, password and name of the network.*
 
-6. `multiplex_file_draw` is a script which draws multiplex network by getting data sets from the files.
-*Command line arguments for multiplex_file_draw : name of the network.*
+Command line arguments for each of these scripts: mySQL username, mySQL password, database file name, table name
 
-7. `centrality_db` is a script calculates centralities of the nodes and draws degree distribution graphs
-and calculates correlations between each layer and multiplex form of the data sets by taking data sets from database
-*Command line arguments for centrality_db : username, password and name of the network.*
 
-8. `centrality_file` is a script calculates centralities of the nodes and draws degree distribution graphs
-and calculates correlations between each layer and multiplex form of the data sets by taking data sets from files.
-*Command line arguments for centrality_file : name of the network.*
 
-9. `disrupt_db` is a script that draws the multiplex graph by getting data sets from database after disrupting the central node.
-*Command line arguments for disrupt_db : username, password, name of the network and node to disrupt.*
+### Original Data Connectors - Convert raw data to meta format
 
-10. `disrupt_file` is a script that draws the multiplex graph by getting data sets from files after disrupting the central node.
-*Command line arguments for disrupt_files : name of the network and node to disrupt.*
+There are two input possibilities, text format and SQL format. 
+
+* `connector_flight` converts raw data of the Flight data set into meta format.
+Command line arguments for connector_flight : name of the network and flight file (ex: python connector_flight.py flight flight.txt)
+
+* `connector_terrorist` converts raw data of the Noordin Top terrorist data set into meta format.
+Command line arguments for connector_terrorist : name of the network and terrorist files (ex: python connector_terrorist.py terrorist a.txt b.txt ...)
+
+* `connector_pardus` converts raw data of the Pardus data set into meta format.
+Command line arguments for connector_pardus : name of the network and pardus files (ex: python connector_pardus.py pardus a.txt b.txt ...)
+
+* `connector_brain` converts raw data of the Brain data set into meta format.
+Command line arguments for connector_pardus : name of the network and pardus files (ex: python connector_brain.py brain a.txt b.txt ...)
+
+The output of running either of these scripts is the following:
+1. `(network_name)_layer_list.txt`: contains a list of layers, separated by newline characters
+2. `(network_name)_node_list.txt` : contains a list of nodes, separated by newline characters
+3. `(network_name)_intra_layer_list.txt`: contains a list of edges between identical layers, separated by newline characters
+4. `(network_name)_inter_layer_list_(id).txt`: contains a list of edges between different layers, separated by newline characters. Depending on the number of layers, multiple layer lists may be created.
+
+The files above are created in the same directory as the script.
+
+### Multiplex Generation Tools - Convert meta format data to LMTF multiplex format
+
+There are two output possibilities:
+
+1. Text output:
+
+    * generate\_multiplex\_text is a script which creates multiplex format for input datasets and stores them in a text file.
+    Command line arguments for generate\_multiplex\_text: name of the network
+
+    * generate\_multiplex\_brain_text is a script which creates multiplex format for the brain input dataset and outputs to a text file.
+    Command line arguments for generate\_multiplex\_brain\_text: name of the network
+
+    The output goes to the file `(network_name)_multiplex.txt, in the same directory as the script.
+
+2. SQL output:
+
+    * generate\_multiplex\_db is a script which creates multiplex format for input datasets and stores them in a SQL database.
+    Command line arguments for generate\_multiplex\_db : MySQL username, MySQL password, name of the network
+
+    * generate\_multiplex\_brain\_db is a script which creates multiplex format for the brain input dataset and outputs to a SQL database.
+    Command line arguments for generate\_multiplex\_brain\_db: MySQL username, MySQL password, name of the network
+
+    The output goes to `(network_name)_db.db`.
+
+Running the specific Original Data Connectors previously will create the appropriate files in the directory in order for the drawing tools to be able to run.
+
+
+### Drawing Tools - Generate a simple visualisation of the network(Using raw and LMTF data)
+
+* `draw_multiplex_text` is a script which draws a multiplex network by getting data from files.
+Command line arguments for draw_multiplex_text : name of the network
+
+* `draw_multiplex_db` is a script which draws a multiplex network by getting data from a database.
+Command line arguments for draw_multiplex_text : MySQL username, MySQL password, name of the network.
+
+* `draw_multiplex_top25` is a script which draws a multiplex network by getting data from files, drawing only the top 25 most connected nodes.
+Command line arguments for draw_multiplex_text : name of the network
+
+These three scripts require three files to be placed in the same directory as the script:
+1. `(network_name)_multiplex.txt`: contains a list of edges in the format (node1 node2 layer1 layer2), each edge separated by newline characters
+2. `(network_name)_node_list.txt`: contains a list of nodes, separated by newline characters
+3. `(network_name)_layer_list.txt`: contains a list of layers, separated by newline characters
+
+Running the specific Original Data Connectors and Multiplex Generation Tools previously will create the appropriate files in the directory in order for the drawing tools to be able to run.
 
 
 # Requirements
 
 The following Python packages are required:
+* `argparse` (for Python 2.6 and earlier)
 * `networkx`
 * `matplotlib`
 * `numpy`
