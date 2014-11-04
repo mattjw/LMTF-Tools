@@ -1,7 +1,7 @@
-# Tools for Multiplex Network Format Translation and Visualisation
+# Tools for Multilayer Network Format Translation and Visualisation
 
-This repository contains open-source software tools for converting multiplex network data 
-files into the LASAGNE Multiplex Framework foramt.
+This repository contains open-source software tools for converting multilayer network data 
+files into the LASAGNE Multilayer Network Framework foramt.
 
 
 ## Files
